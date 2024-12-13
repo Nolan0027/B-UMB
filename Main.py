@@ -1,5 +1,5 @@
 import os
-import random
+import asyncio
 import discord
 from discord.ext import commands
 
@@ -9,9 +9,18 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Load commands dynamically
-bot.load_extension("bot.commands.ping")
-bot.load_extension("bot.commands.grid")
+async def load_extensions():
+    try:
+        await bot.load_extension("bot.commands.ping")
+        await bot.load_extension("bot.commands.grid")
+        print("Extensions loaded successfully.")
+    except Exception as e:
+        print(f"Failed to load extension: {e}")
+
+# Run everything once the bot is ready
+@bot.event
+async def on_ready():
+    await load_extensions()
 
 TOKEN = os.environ.get('TOKEN')
-bot.run(TOKEN)
+asyncio.run(bot.start(TOKEN))
