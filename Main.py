@@ -1,6 +1,6 @@
 import os
 from discord.ext import commands
-from config import TOKEN
+from Config import TOKEN
 from bot.commands.move import move
 from bot.commands.mine import mine
 from bot.commands.reset import reset
