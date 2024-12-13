@@ -1,4 +1,5 @@
 import os
+os.system("./start.sh")
 import random
 import discord
 from discord.ext import commands
