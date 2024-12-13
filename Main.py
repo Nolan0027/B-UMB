@@ -1,4 +1,5 @@
 import os
+import discord
 from discord.ext import commands
 from Config import TOKEN
 from bot.commands.move import move
