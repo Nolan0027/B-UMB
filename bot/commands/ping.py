@@ -1,14 +1,17 @@
 import time
 from discord.ext import commands
 
-async def ping(ctx, bot_start_time):
+# This should be defined in Main.py to ensure it's globally accessible
+bot_start_time = time.time()
+
+async def ping(ctx):
     try:
         start_time = time.time()
 
         # Calculate latency in milliseconds
         latency = round(ctx.bot.latency * 1000)
 
-        # Calculate bot uptime
+        # Calculate uptime in seconds
         uptime = round(time.time() - bot_start_time)
 
         end_time = time.time()
