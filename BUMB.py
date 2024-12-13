@@ -59,7 +59,7 @@ def display_grid(user_id):
         row = []
         for x in range(GRID_WIDTH):
             if [y, x] == [px % GRID_HEIGHT, py % GRID_WIDTH]:
-                row.append("P")
+                row.append("P")  # Represent player
             elif (y, x) in chunk["stones_positions"]:
                 row.append("S")
             else:
