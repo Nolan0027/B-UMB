@@ -1,6 +1,11 @@
 import os
 import discord
 from discord.ext import commands
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 # Retrieve the token from environment variable
 TOKEN = os.environ.get('TOKEN')
