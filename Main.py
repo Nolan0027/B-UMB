@@ -1,11 +1,17 @@
 import os
 import discord
 from discord.ext import commands
-port = int(os.getenv("PORT", 4000))
-app. get('/', (req, res) => {
-  res.send('Hello World!')
-})
+from flask import Flask
 
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run(port=4000)
+  
 # Retrieve the token from environment variable
 TOKEN = os.environ.get('TOKEN')
 
